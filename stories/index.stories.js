@@ -6,4 +6,30 @@ import { linkTo } from "@storybook/addon-links";
 
 import { Table } from "../src";
 
-storiesOf("Table", module).add("to Storybook", () => <Table />);
+const tableConfig = {
+  rows: [
+    {
+      label: "HINDI",
+      key: "hindi"
+    },
+    {
+      label: "ENGLISH",
+      key: "english"
+    }
+  ]
+};
+
+const data = [
+  {
+    hindi: 20,
+    english: 30
+  }
+];
+
+storiesOf("Table", module).add("to Storybook", () => (
+  <Table config={tableConfig} data={data} />
+));
+
+storiesOf("Table2", module).add("to Storybook", () => (
+  <Table config={tableConfig} />
+));
